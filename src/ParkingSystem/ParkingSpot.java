@@ -15,6 +15,7 @@ public class ParkingSpot {
     }
 
     public void assignVehicle(ParkingVehicle pv) {
+        this.parkingVehicle = pv;
         this.status = Status.FULL;
     }
 

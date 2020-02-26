@@ -17,6 +17,13 @@ public class ParkingLot {
         addParkingSpot();
     }
 
+    /**
+     * @return the parkingSpots
+     */
+    public ParkingSpot[] getParkingSpots() {
+        return parkingSpots;
+    }
+
     private void addParkingSpot() {
         for (int i = 0; i < parkingSpots.length; i++) {
             parkingSpots[i] = new ParkingSpot(i + 1 + "AA");
@@ -62,8 +69,12 @@ public class ParkingLot {
     public int searchForParkingVehicle(ParkingVehicle pv) {
         if (pv != null) {
             for (int i = 0; i < parkingSpots.length; i++) {
-                if (parkingSpots[i].getParkingVehicle().equals(pv)) {
-                    return i;
+                try {
+                    if (parkingSpots[i].getParkingVehicle().equals(pv)) {
+                        return i;
+                    }
+                } catch (Exception e) {
+                    continue;
                 }
             }
         }

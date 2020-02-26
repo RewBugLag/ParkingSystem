@@ -1,5 +1,6 @@
 import ParkingSystem.ParkingLot;
 import ParkingSystem.ParkingTicket;
+import ParkingSystem.ParkingVehicle;
 import Vehicles.*;
 
 /**
@@ -16,6 +17,17 @@ public class Test {
         System.out.println(xObject.getEntryTime());
         System.out.println(xObject.getExitTime());
 
-        System.out.println(new ParkingLot(10));
+        ParkingLot lot1 = new ParkingLot(10);
+        lot1.entryPoint(c1);
+        ParkingVehicle c11 = new ParkingVehicle(c1);
+        lot1.entryPoint(v1);
+        lot1.entryPoint(v1);
+        lot1.entryPoint(t1);
+        System.out.println(lot1);
+
+        System.out.println();
+        lot1.exitPoint(lot1.getParkingSpots()[0].getParkingVehicle());
+        System.out.println();
+        System.out.println(lot1);
     }
 }
